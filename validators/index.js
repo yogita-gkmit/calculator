@@ -15,7 +15,7 @@ function validateEmail(email) {
         return true;
     }
     catch(err){
-        throw new Error(err.message);
+        return err.message;
     }
 }
 
