@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger/swagger.yaml');
+const YAML = require('yamljs');
+const path = require('path');
+const swaggerDocument = YAML.load(path.join(__dirname, './swagger/swagger.yaml'));
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -15,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 // Swagger UI setup
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/api', require('./routes/history.route.js'));
 app.use('/api', require('./routes/operations.route.js'));
