@@ -10,7 +10,7 @@ async function showHistory(req, res){
 
 		const pastCalculations = await getHistory(email);
 
-		if(pastCalculations.length==0) return res.status(400).json({message: "No History Found"})
+		if(pastCalculations.length==0) return res.status(404).json({message: "No History Found"})
 
 		res.status(200).json({"data": pastCalculations})
 	}

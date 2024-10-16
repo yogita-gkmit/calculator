@@ -20,7 +20,7 @@ describe('History API Failed Case', () => {
       .get('/api/history')
       .set('email', `new@gmail.com`);
       
-    expect(response.statusCode).toBe(400);
+    expect(response.statusCode).toBe(404);
     expect(response.body.message).toBe('No History Found');
     
   }); 
