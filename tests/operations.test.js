@@ -1,6 +1,15 @@
 const request = require('supertest');
 const app = require('../index.js');
 
+
+// let server;
+
+// beforeAll((done) => {
+//   server = app.listen(4000, () => {
+//     done();
+//   });
+// });
+
 describe('Calculator API', () => {
   it('should calculate addition correctly', async () => {
     const response = await request(app)
@@ -155,3 +164,7 @@ it('should calculate multiply Incorrectly type of error', async () => {
   });
 
 })
+
+// afterAll((done) => {
+//   server.close(() => done());
+// });

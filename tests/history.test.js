@@ -1,6 +1,15 @@
 const request = require('supertest');
 const app = require('../index.js');
 
+
+// let server;
+
+// beforeAll((done) => {
+//   server = app.listen(4000, () => {
+//     done();
+//   });
+// });
+
 describe('History API', () => {
   it('should display history', async () => {
     const response = await request(app)
@@ -50,4 +59,8 @@ describe('Reset API', () => {
     
   }); 
 })
+
+// afterAll((done) => {
+//   server.close(() => done());
+// });
 
