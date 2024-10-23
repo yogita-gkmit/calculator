@@ -1,0 +1,17 @@
+commands to run
+
+- docker compose up
+- docker compose up -d (to run in daemon, jb logs nhi dekhne basically tb)
+- docker compose --env-file ./env (if env is not in the root directory)
+
+cli command to get in exec of a container
+- docker exec -it <container name> bash
+bash is basically a shell type - bash is used with mongo and postgres however in redis we use redis-cli
+
+in docker mongo exec to
+- mongosh
+- mongosh -u <username> -p <password>
+- show dbs
+- use <database>
+- show collections
+- db.<collection>.find()
